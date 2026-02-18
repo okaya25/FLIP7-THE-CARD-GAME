@@ -66,8 +66,11 @@ def MainGame(amount_of_players):
 
 def target(card,players,deck,deck2,Players):
     targeted = ""
-    while targeted not in players:
-        targeted = input("name of target")
+    names = []
+    for player in players:
+        names.append(player.get_name())
+    while targeted not in names:
+        targeted = input("name of target: ")
     match card:
         case "freeze":
             for player in players:
@@ -85,4 +88,5 @@ def target(card,players,deck,deck2,Players):
 
 if __name__ == "__main__":
     MainGame(2)
+
     
